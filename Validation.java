@@ -45,6 +45,15 @@ public class Validation {
             System.out.println("Invalid mobile number. It must follow the format 91 9919819801.");
         }
 
+        System.out.print("Enter your password (min 8 characters): ");
+        String password = scanner.nextLine();
+
+        if (isValidPassword(password)) {
+            System.out.println("Valid password.");
+        } else {
+            System.out.println("Invalid password. It must be at least 8 characters long.");
+        }
+
 
         scanner.close();
     }
@@ -68,4 +77,9 @@ public class Validation {
         String regex = "^91\\s[0-9]{10}$";
         return mobileNumber.matches(regex);
     }
+
+    public static boolean isValidPassword(String password) {
+        return password.length() >= 8;
+    }
+
 }
