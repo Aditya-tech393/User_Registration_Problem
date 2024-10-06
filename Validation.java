@@ -79,7 +79,7 @@ public class Validation {
     }
 
     public static boolean isValidPassword(String password) {
-        String regex = "^(?=.*[A-Z]).{8,}$";
+        String regex = "^(?=.*[A-Z])(?=.*[0-9]).{8,}$";
         return password.matches(regex);
     }
 
